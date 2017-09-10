@@ -18,7 +18,7 @@ public class TestController {
 
     @ResponseBody
     @RequestMapping(value="/json")
-    public String json() throws CrowdException {
-        throw new CrowdException("发生错误2");
+    public String json() throws Exception {
+        throw new Exception();
     }
 }
