@@ -4,7 +4,7 @@ package com.example.dto;
 public class ErrorInfo<T> {
     public static final Integer OK = 0;
     public static final Integer ERROR = 100;
-    private Integer code;
+    private String  code;
     private String message;
     private String url;
     private T data;
@@ -17,11 +17,11 @@ public class ErrorInfo<T> {
         return ERROR;
     }
 
-    public Integer getCode() {
+    public String getCode() {
         return code;
     }
 
-    public void setCode(Integer code) {
+    public void setCode(String code) {
         this.code = code;
     }
 

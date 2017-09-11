@@ -30,8 +30,8 @@ public class GlobalExceptionHandler {
     @ResponseBody
     public ErrorInfo<String> jsonErrorHandler(HttpServletRequest req, CrowdException e) throws Exception {
         ErrorInfo<String> r = new ErrorInfo<>();
-        r.setMessage(e.getMessage());
-        r.setCode(ErrorInfo.ERROR);
+        r.setMessage(e.getMessageText());
+        r.setCode(e.getCode());
         r.setData("Some Data");
         r.setUrl(req.getRequestURL().toString());
         return r;

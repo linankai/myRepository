@@ -21,7 +21,7 @@ public class CrowdException extends RuntimeException {
         this.code = code;
     }
 
-    public CrowdException(String message) {
+    public CrowdException(String code,String messageText) {
         super("");
         this.code = code;
         this.messageText = messageText;
