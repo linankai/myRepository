@@ -1,12 +1,25 @@
 package com.example.model;
-
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.io.Serializable;
 
+@Entity
 public class User implements Serializable {
-
+    @Id
+    @GeneratedValue
     private Integer id;
+    @Column(nullable = false)
     private String name;
+    @Column(nullable = false)
     private Integer age;
+
+    public User(){}
+    public User(String name, Integer age) {
+        this.name = name;
+        this.age = age;
+    }
 
     public Integer getId() {
         return id;

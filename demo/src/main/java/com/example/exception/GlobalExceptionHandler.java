@@ -18,9 +18,9 @@ public class GlobalExceptionHandler {
 
     //用来定义函数针对的异常类型，最后将Exception对象和请求URL映射到error.html中
     @ExceptionHandler(value = Exception.class)
-    public ModelAndView defaultErrorHandler(HttpServletRequest req, CrowdException e) throws CrowdException {
+    public ModelAndView defaultErrorHandler(HttpServletRequest req, Exception e) throws Exception {
         ModelAndView mav = new ModelAndView();
-        mav.addObject("exception", e);
+        mav.addObject("exception", e.getMessage());
         mav.addObject("url", req.getRequestURL());
         mav.setViewName(DEFAULT_ERROR_VIEW);
         return mav;
